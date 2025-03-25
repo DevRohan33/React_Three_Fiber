@@ -5,14 +5,11 @@ import { useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { TextureLoader } from "three";
 
-// Load image from public folder
 const Card = () => {
   const [hovered, setHovered] = useState(false);
   
-  // Ensure the image is in the "public/image" folder
   const texture = useLoader(TextureLoader, "/image/profil.jpg");
 
-  // Smooth tilt animation
   const { rotation } = useSpring({
     rotation: hovered ? [0.1, 0.2, 0] : [0, 0, 0],
     config: { mass: 1, tension: 170, friction: 26 },
@@ -33,7 +30,6 @@ const Card = () => {
         <div 
           className="p-5 rounded-xl text-center shadow-lg w-52 backdrop-blur-md"
           style={{
-            // backgroundColor: "rgba(0, 0, 0, 0.7)", // Better contrast
             color: "white",
             fontWeight: "bold",
             borderRadius: "12px",
